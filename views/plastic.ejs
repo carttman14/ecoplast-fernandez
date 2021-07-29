@@ -1,9 +1,11 @@
-<%-include('template/header', {webTitle:'Home'}) %>
+<%- include('template/header', {webTitle:'Ecoplast Fernández Plásticos'}) %>
+
 <body>
   <%-include('navbar') %>
 
   <div class="container">
-    <h1>Plastic</h1>
+    <h1>Nuestros materiales</h1>
+
     <table class="table">
       <thead>
         <tr>
@@ -14,20 +16,18 @@
         </tr>
       </thead>
       <tbody>
-        <% if (plasticArray.length > 0) { %> <% plasticArray.forEach(plastic =>
-        { %>
+        <% if (plasticArray.length >0) { %> <% plasticArray.forEach(plastic => {
+        %>
 
         <tr>
-          <th scope="row"><%= plastic.id %></th>
-          <td><%= plastic.name %></td>
-          <td><%= plastic.description %></td>
-          <td>Buenos Aires</td>
+          <th><%= plastic.id %></th>
+          <th><%= plastic.name %></th>
+          <th><%= plastic.description %></th>
+          <th></th>
         </tr>
 
         <% }) %> <% } %>
       </tbody>
     </table>
   </div>
-
-  <%-include('template/footer') %>
 </body>
