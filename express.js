@@ -11,16 +11,10 @@ app.set('views', __dirname+'/views');
 
 app.use(express.static(__dirname+"/public"));
 
-app.get('/',(req,res)=>{
-    res.render('index', {title: 'Bienvenidos a Ecoplast Fernández, transformando progresos'});
-})
-app.get('/services',(req,res)=>{
-    res.render('services', {heading: 'This is our service page'});
-})
+//Web Routes
+app.use('/', require('./router/webroutes'))
 
-app.get('/about',(req,res)=>{
-    res.render('about', {aboutTitle: 'This is our about page'});
-})
+app.use('/plastic', require('./router/Plastic'))
 
 app.use((req,res,next)=>{
     res.status(404).render('404',{err:'The page you`re looking for doesn`t exist'});

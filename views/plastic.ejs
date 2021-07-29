@@ -1,0 +1,33 @@
+<%-include('template/header', {webTitle:'Home'}) %>
+<body>
+  <%-include('navbar') %>
+
+  <div class="container">
+    <h1>Plastic</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (plasticArray.length > 0) { %> <% plasticArray.forEach(plastic =>
+        { %>
+
+        <tr>
+          <th scope="row"><%= plastic.id %></th>
+          <td><%= plastic.name %></td>
+          <td><%= plastic.description %></td>
+          <td>Buenos Aires</td>
+        </tr>
+
+        <% }) %> <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <%-include('template/footer') %>
+</body>
