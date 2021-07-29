@@ -12,7 +12,7 @@ app.set('views', __dirname+'/views');
 app.use(express.static(__dirname+"/public"));
 
 app.get('/',(req,res)=>{
-    res.render('index', {title: 'This is our title'});
+    res.render('index', {title: 'Bienvenidos a Ecoplast Fernández, transformando progresos'});
 })
 app.get('/services',(req,res)=>{
     res.render('services', {heading: 'This is our service page'});
